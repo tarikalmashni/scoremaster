@@ -19,19 +19,43 @@ class ScoreboardPage extends StatelessWidget {
         backgroundColor: AppColors.background,
         elevation: 0,
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: const <Widget>[
-          Padding(
-            padding: EdgeInsets.all(20.0),
-            child: CustomTabBar(),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          CustomLeaders(),
-          Text("bla"),
-        ],
+      body: DefaultTabController(
+        length: 3,
+        child: Column(
+          children: const <Widget>[
+            Padding(
+              padding: EdgeInsets.all(20.0),
+              child: CustomTabBar(),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            SizedBox(
+              height: 500,
+              child: TabBarView(
+                children: <Widget>[
+                  CustomLeaders(),
+                  Center(
+                    child: Text(
+                      'nothing here yet',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  Center(
+                    child: Text(
+                      'nothing here yet too',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

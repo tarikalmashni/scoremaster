@@ -11,33 +11,7 @@ class CustomLeaders extends StatelessWidget {
     return SizedBox(
       height: 300,
       width: 600,
-      // child: Row(
-      //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      //   children: const <Widget>[
-      //     CustomColumn(
-      //       place: 2,
-      //       iconIndicator: Icon(Icons.arrow_drop_down),
-      //       avatarPath: 'assets/mock/pictures/profile-6.jpg',
-      //       username: '@Tom',
-      //       score: 5200,
-      //     ),
-      //     CustomColumn(
-      //       place: 1,
-      //       avatarPath: 'assets/mock/pictures/profile-3.jpg',
-      //       username: '@Tarik',
-      //       score: 6000,
-      //     ),
-      //     CustomColumn(
-      //       place: 3,
-      //       iconIndicator: Icon(Icons.arrow_drop_up),
-      //       avatarPath: 'assets/mock/pictures/profile-1.jpg',
-      //       username: '@Daniel',
-      //       score: 4400,
-      //     ),
-      //   ],
-      // ),
       child: Stack(
-        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Positioned(
             top: paddingTop,
