@@ -32,7 +32,10 @@ class CustomLeaders extends StatelessWidget {
             right: 60,
             child: const CustomColumn(
               place: 3,
-              iconIndicator: Icon(Icons.arrow_drop_up, color: AppColors.green),
+              iconIndicator: Icon(
+                Icons.arrow_drop_up,
+                color: AppColors.green,
+              ),
               avatarPath: 'assets/mock/pictures/profile-1.jpg',
               username: '@Daniel',
               score: 4400,

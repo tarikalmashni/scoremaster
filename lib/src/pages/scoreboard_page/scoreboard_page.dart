@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scoremaster/src/config/theme/app_colors.dart';
+import 'package:scoremaster/src/pages/scoreboard_page/widgets/custom_highscore_list.dart';
 import 'package:scoremaster/src/pages/scoreboard_page/widgets/custom_leaders.dart';
 import 'package:scoremaster/src/pages/scoreboard_page/widgets/custom_tab_bar.dart';
 
@@ -22,20 +23,27 @@ class ScoreboardPage extends StatelessWidget {
       body: DefaultTabController(
         length: 3,
         child: Column(
-          children: const <Widget>[
-            Padding(
+          children: <Widget>[
+            const Padding(
               padding: EdgeInsets.all(20.0),
               child: CustomTabBar(),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             SizedBox(
-              height: 500,
+              height: 650,
               child: TabBarView(
                 children: <Widget>[
-                  CustomLeaders(),
-                  Center(
+                  Column(
+                    children: const [
+                      CustomLeaders(),
+                      SingleChildScrollView(
+                        child: CustomHighscoreList(),
+                      ),
+                    ],
+                  ),
+                  const Center(
                     child: Text(
                       'nothing here yet',
                       style: TextStyle(
@@ -43,7 +51,7 @@ class ScoreboardPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Center(
+                  const Center(
                     child: Text(
                       'nothing here yet too',
                       style: TextStyle(
