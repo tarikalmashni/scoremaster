@@ -11,8 +11,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // TODO use go router as mentioned in the instructions :)
     return MaterialApp(
       title: 'Flutter Demo',
+      // TODO implement your own theme
       theme: ThemeData(
         // This is the theme of your application.
         //

@@ -57,9 +57,12 @@ class CustomLeaders extends StatelessWidget {
   }
 }
 
+// TODO never put multiple classes in the same file (please)
+// TODO the name is quite misleading since it's a strongly specialized column, not just a customized column
 class CustomColumn extends StatelessWidget {
   const CustomColumn({
     Key? key,
+    // TODO english nazi: the proper word would be rank, since place only means locations :)
     required this.place,
     this.iconIndicator,
     required this.avatarPath,
@@ -105,11 +108,13 @@ class CustomColumn extends StatelessWidget {
             border: Border.all(
               width: place == 1 ? 5 : 2,
               color: AppColors.green,
+              // TODO if you take a close look, there is a shadow around the first rank avatar
             ),
             borderRadius: const BorderRadius.all(
               Radius.circular(50),
             ),
           ),
+          // TODO Container itself has a clip property, use it instead of unnecessarily adding another widget to the tree :)
           child: ClipRRect(
             borderRadius: const BorderRadius.all(
               Radius.circular(50),

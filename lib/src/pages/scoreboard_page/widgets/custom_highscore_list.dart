@@ -6,6 +6,7 @@ class CustomHighscoreList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // TODO this should be a listview.builder :) (But nice thing you discovered wraps and its sexy possibilites!)
     return Wrap(
       spacing: 10,
       runSpacing: 10,
@@ -40,6 +41,7 @@ class CustomHighscoreList extends StatelessWidget {
 }
 
 class CustomListEntry extends StatelessWidget {
+  // TODO for easier readability, I suggest you order parameters by required and not-required instead of mixing them :)
   const CustomListEntry({
     Key? key,
     required this.place,
@@ -87,6 +89,7 @@ class CustomListEntry extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              // TODO nice!
               ClipRRect(
                 borderRadius: const BorderRadius.all(
                   Radius.circular(50),

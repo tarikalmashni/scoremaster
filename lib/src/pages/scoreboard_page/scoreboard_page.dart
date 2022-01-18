@@ -11,6 +11,7 @@ class ScoreboardPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.background,
+      // TODO this could be a "custom-appbar" (simply extend appbar and configure it as needed in the super constructor call)
       appBar: AppBar(
         title: const Text(
           'Leaderboard',
@@ -20,24 +21,27 @@ class ScoreboardPage extends StatelessWidget {
         backgroundColor: AppColors.background,
         elevation: 0,
       ),
+      // TODO no tab controller needed :)
       body: DefaultTabController(
         length: 3,
         child: Column(
           children: <Widget>[
             const Padding(
+              // TODO now that you've advanced to the next level, I'd like you to remove any magic numbers and implement a basic design system. User t-shirt sizing with M being the base size and all other sizes being a factor of it. (e.g. M = 8.0, S = M / 1.5)
               padding: EdgeInsets.all(20.0),
               child: CustomTabBar(),
             ),
             const SizedBox(
               height: 20,
             ),
-            SizedBox(
-              height: 650,
+            Expanded(
+              // TODO refactor tab bar view into buttons which filter the data accordingly
               child: TabBarView(
                 children: <Widget>[
                   Column(
                     children: const [
                       CustomLeaders(),
+                      // TODO why do you need this widget?
                       SingleChildScrollView(
                         child: CustomHighscoreList(),
                       ),
