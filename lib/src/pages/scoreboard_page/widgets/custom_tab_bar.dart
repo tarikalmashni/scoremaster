@@ -38,7 +38,7 @@ class CustomTabBar extends StatelessWidget {
       ],
       indicator: BoxDecoration(
         borderRadius: BorderRadius.circular(50),
-        color: AppColors.darkGreen,
+        color: AppColors.primary,
       ),
     );
   }
