@@ -10,7 +10,7 @@ class GameModel with _$GameModel {
   @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
   const factory GameModel({
     required String uid,
-    required String example,
+    required String name,
   }) = _GameModel;
 
   factory GameModel.fromJson(Map<String, dynamic> json) => _$GameModelFromJson(json);
