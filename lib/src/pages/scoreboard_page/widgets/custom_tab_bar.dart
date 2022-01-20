@@ -6,8 +6,8 @@ class CustomTabBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TabBar(
-      tabs: const <Widget>[
+    return Row(
+      children: const <Widget>[
         Expanded(
           child: Text(
             'Today',
@@ -36,10 +36,6 @@ class CustomTabBar extends StatelessWidget {
           ),
         ),
       ],
-      indicator: BoxDecoration(
-        borderRadius: BorderRadius.circular(50),
-        color: AppColors.primary,
-      ),
     );
   }
 }

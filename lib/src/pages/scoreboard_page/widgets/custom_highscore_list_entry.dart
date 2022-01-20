@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scoremaster/src/config/app_spacing.dart';
 import 'package:scoremaster/src/config/theme/app_colors.dart';
 
 class CustomHighscoreListEntry extends StatelessWidget {
@@ -22,6 +23,9 @@ class CustomHighscoreListEntry extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        const SizedBox(
+          width: AppSpacing.XL,
+        ),
         Column(
           children: <Widget>[
             Text(
@@ -36,55 +40,60 @@ class CustomHighscoreListEntry extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(width: 20),
-        Container(
-          width: 280,
-          height: 50,
-          decoration: const BoxDecoration(
-            color: AppColors.primary,
-            borderRadius: BorderRadius.all(
-              Radius.circular(50),
-            ),
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              ClipRRect(
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(50),
-                ),
-                child: Image(
-                  width: 50,
-                  image: AssetImage(avatarPath),
-                  fit: BoxFit.cover,
-                ),
+        const SizedBox(
+          width: AppSpacing.XL,
+        ),
+        Expanded(
+          child: Container(
+            decoration: const BoxDecoration(
+              color: AppColors.primary,
+              borderRadius: BorderRadius.all(
+                Radius.circular(50),
               ),
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(right: 10),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ClipRRect(
+                  borderRadius: const BorderRadius.all(
+                    Radius.circular(50),
+                  ),
+                  child: Image(
+                    width: 50,
+                    height: 50,
+                    image: AssetImage(avatarPath),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 10),
                     child: Text(
                       username,
-                      textAlign: TextAlign.left, // ? funzt nicht?
                       style: const TextStyle(
                         color: Colors.white,
                       ),
+                      softWrap: false,
+                      overflow: TextOverflow.fade,
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 20),
-                    child: Text(
-                      score.toString(),
-                      style: const TextStyle(
-                        fontSize: 20,
-                        color: AppColors.accent,
-                      ),
-                    ),
+                ),
+                Text(
+                  score.toString(),
+                  style: const TextStyle(
+                    fontSize: AppFontSizes.L,
+                    color: AppColors.accent,
                   ),
-                ],
-              ),
-            ],
+                ),
+                const SizedBox(
+                  width: AppSpacing.XL,
+                ),
+              ],
+            ),
           ),
+        ),
+        const SizedBox(
+          width: AppSpacing.XL,
         ),
       ],
     );

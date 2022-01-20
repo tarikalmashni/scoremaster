@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:scoremaster/src/config/app_spacing.dart';
 
 import 'custom_highscore_list_entry.dart';
 
@@ -9,9 +8,7 @@ class CustomHighscoreList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO this should be a listview.builder :) (But nice thing you discovered wraps and its sexy possibilites!)
-    return Wrap(
-      spacing: AppSpacing.currentSize * 2.5,
-      runSpacing: AppSpacing.currentSize / 4 * 5,
+    return ListView(
       children: const <Widget>[
         CustomHighscoreListEntry(
           place: 4,
@@ -31,42 +28,30 @@ class CustomHighscoreList extends StatelessWidget {
           username: '@Rico',
           score: 14123,
         ),
-        // CustomListEntry(
-        //   place: 6,
-        //   avatarPath: 'assets/mock/pictures/florian.jpg',
-        //   username: '@FlorianDerNoob',
-        //   score: 9183,
-        // ),
-        // CustomListEntry(
-        //   place: 6,
-        //   avatarPath: 'assets/mock/pictures/florian.jpg',
-        //   username: '@FlorianDerNoob',
-        //   score: 9183,
-        // ),
-        // CustomListEntry(
-        //   place: 6,
-        //   avatarPath: 'assets/mock/pictures/florian.jpg',
-        //   username: '@FlorianDerNoob',
-        //   score: 9183,
-        // ),
-        // CustomListEntry(
-        //   place: 6,
-        //   avatarPath: 'assets/mock/pictures/florian.jpg',
-        //   username: '@FlorianDerNoob',
-        //   score: 9183,
-        // ),
-        // CustomListEntry(
-        //   place: 6,
-        //   avatarPath: 'assets/mock/pictures/florian.jpg',
-        //   username: '@FlorianDerNoob',
-        //   score: 9183,
-        // ),
-        // CustomListEntry(
-        //   place: 6,
-        //   avatarPath: 'assets/mock/pictures/florian.jpg',
-        //   username: '@FlorianDerNoob',
-        //   score: 9183,
-        // ),
+        CustomHighscoreListEntry(
+          place: 6,
+          avatarPath: 'assets/mock/pictures/profile-5.jpg',
+          username: '@Rico',
+          score: 14123,
+        ),
+        CustomHighscoreListEntry(
+          place: 6,
+          avatarPath: 'assets/mock/pictures/profile-5.jpg',
+          username: '@Rico',
+          score: 14123,
+        ),
+        CustomHighscoreListEntry(
+          place: 6,
+          avatarPath: 'assets/mock/pictures/profile-5.jpg',
+          username: '@Rico',
+          score: 14123,
+        ),
+        CustomHighscoreListEntry(
+          place: 6,
+          avatarPath: 'assets/mock/pictures/profile-5.jpg',
+          username: '@Rico',
+          score: 14123,
+        ),
       ],
     );
   }

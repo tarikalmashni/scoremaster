@@ -22,53 +22,22 @@ class ScoreboardPage extends StatelessWidget {
         backgroundColor: AppColors.secondary,
         elevation: 0,
       ),
-      // TODO no tab controller needed :)
-      body: DefaultTabController(
-        length: 3,
-        child: Column(
-          children: <Widget>[
-            const Padding(
-              padding: EdgeInsets.all(AppPaddings.M),
-              child: CustomTabBar(),
-            ),
-            const SizedBox(
-              // TODO now that you've advanced to the next level, I'd like you to remove any magic numbers and implement a basic design system. User t-shirt sizing with M being the base size and all other sizes being a factor of it. (e.g. M = 8.0, S = M / 1.5)
-              height: 20,
-            ),
-            Expanded(
-              // TODO refactor tab bar view into buttons which filter the data accordingly
-              child: TabBarView(
-                children: <Widget>[
-                  Column(
-                    children: const [
-                      CustomLeaders(),
-                      // TODO why do you need this widget?
-                      SingleChildScrollView(
-                        child: CustomHighscoreList(),
-                      ),
-                    ],
-                  ),
-                  const Center(
-                    child: Text(
-                      'nothing here yet',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                  const Center(
-                    child: Text(
-                      'nothing here yet too',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
+      body: Column(
+        children: const <Widget>[
+          Padding(
+            padding: EdgeInsets.all(AppPaddings.M),
+            child: CustomTabBar(),
+          ),
+          SizedBox(
+            // TODO now that you've advanced to the next level, I'd like you to remove any magic numbers and implement a basic design system. User t-shirt sizing with M being the base size and all other sizes being a factor of it. (e.g. M = 8.0, S = M / 1.5)
+            height: 20,
+          ),
+          CustomLeaders(),
+          // TODO why do you need this widget?
+          Expanded(
+            child: CustomHighscoreList(),
+          ),
+        ],
       ),
     );
   }
