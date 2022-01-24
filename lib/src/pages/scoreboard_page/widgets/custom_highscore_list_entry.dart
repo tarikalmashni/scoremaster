@@ -5,14 +5,14 @@ import 'package:scoremaster/src/config/theme/app_colors.dart';
 class CustomHighscoreListEntry extends StatelessWidget {
   const CustomHighscoreListEntry({
     Key? key,
-    required this.place,
+    required this.rank,
     required this.avatarPath,
     required this.username,
     required this.score,
     this.iconIndicator,
   }) : super(key: key);
 
-  final int place;
+  final int rank;
   final String avatarPath;
   final String username;
   final int score;
@@ -29,7 +29,7 @@ class CustomHighscoreListEntry extends StatelessWidget {
         Column(
           children: <Widget>[
             Text(
-              place.toString(),
+              rank.toString(),
               style: const TextStyle(
                 color: Colors.white,
               ),
